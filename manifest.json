@@ -1,0 +1,33 @@
+{
+  "name": "Youtube Playlist Info",
+  "description": "Displays current Youtube playlist's watched percentage, total playlist duration, and remaining duration",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon_16.png",
+      "32": "img/icon_32.png",
+      "48": "img/icon_48.png",
+      "64": "img/icon_64.png",
+      "92": "img/icon_92.png",
+      "128": "img/icon_128.png"
+    },
+    "default_title": "Youtube Playlist Info"
+  },
+  "icons": {
+    "16": "img/icon_16.png",
+    "32": "img/icon_32.png",
+    "48": "img/icon_48.png",
+    "64": "img/icon_64.png",
+    "92": "img/icon_92.png",
+    "128": "img/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*list*"],
+      "js": ["main.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["tabs", "*://*.youtube.com/*list*"],
+  "manifest_version": 2
+}
